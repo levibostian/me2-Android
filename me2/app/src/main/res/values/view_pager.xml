@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tab_1_name">My Help</string>
+    <string name="tab_2_name">Give Help</string>
+    <string name="tab_3_name">Support</string>
+</resources>
