@@ -7,17 +7,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import co.me2app.me2.R;
 
-public class MainFragment extends Fragment {
+public class SupportFragment extends Fragment {
 
-    public static MainFragment newInstance() {
-        MainFragment fragment = new MainFragment();
+    public static SupportFragment newInstance() {
+        SupportFragment fragment = new SupportFragment();
         return fragment;
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_support, container, false);
         return rootView;
     }
 }

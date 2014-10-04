@@ -6,10 +6,12 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import co.me2app.me2.R;
+import co.me2app.me2.adapter.ViewPagerNavigationAdapter;
 
 public class MainActivity extends ActionBarActivity {
 
     private ViewPager mViewPager;
+    private ViewPagerNavigationAdapter mNavigationAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +24,9 @@ public class MainActivity extends ActionBarActivity {
 
     private void setupViews() {
         mViewPager = (ViewPager) findViewById(R.id.view_pager);
+        mNavigationAdapter = new ViewPagerNavigationAdapter(getSupportFragmentManager());
 
+        mViewPager.setAdapter(mNavigationAdapter);
         mViewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
