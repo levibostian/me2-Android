@@ -1,4 +1,4 @@
-package co.me2app.me2.adapter;
+package co.me2app.me2.adapter.viewpager;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

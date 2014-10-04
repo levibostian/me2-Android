@@ -9,7 +9,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import co.me2app.me2.R;
-import co.me2app.me2.adapter.ViewPagerNavigationAdapter;
+import co.me2app.me2.adapter.viewpager.ViewPagerNavigationAdapter;
 
 public class MainActivity extends ActionBarActivity {
 
