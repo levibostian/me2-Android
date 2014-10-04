@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 import co.me2app.me2.R;
 import co.me2app.me2.vo.NeedHelpVo;
@@ -25,7 +26,13 @@ public class NeedsHelpListViewAdapter extends ArrayAdapter<NeedHelpVo> {
     }
 
     static class ViewHolder {
+        public ImageView statusColor;
         public TextView username;
+        public TextView struggle;
+        public TextView date;
+        public ImageView userGender;
+        public ImageView locationMarker;
+        public TextView location;
     }
 
     @Override
@@ -37,14 +44,20 @@ public class NeedsHelpListViewAdapter extends ArrayAdapter<NeedHelpVo> {
             rowView = inflater.inflate(R.layout.need_help_row_layout, parent, false);
 
             ViewHolder viewHolder = new ViewHolder();
+            viewHolder.statusColor = (ImageView) rowView.findViewById(R.id.status_color);
             viewHolder.username = (TextView) rowView.findViewById(R.id.username);
+            viewHolder.struggle = (TextView) rowView.findViewById(R.id.struggle);
+            viewHolder.date = (TextView) rowView.findViewById(R.id.date);
+            viewHolder.userGender = (ImageView) rowView.findViewById(R.id.user_gender);
+            viewHolder.locationMarker = (ImageView) rowView.findViewById(R.id.location_marker);
+            viewHolder.location = (TextView) rowView.findViewById(R.id.location);
 
             rowView.setTag(viewHolder);
         }
 
         ViewHolder viewHolder = (ViewHolder) rowView.getTag();
 
-        // can get any view elements from row (viewholder) here.
+        viewHolder.locationMarker.setImageDrawable(mContext.getResources().getDrawable(R.drawable.ic_action_place));
 
         return rowView;
     }
