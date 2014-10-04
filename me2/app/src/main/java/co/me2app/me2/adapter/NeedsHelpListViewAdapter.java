@@ -57,7 +57,15 @@ public class NeedsHelpListViewAdapter extends ArrayAdapter<NeedHelpVo> {
 
         ViewHolder viewHolder = (ViewHolder) rowView.getTag();
 
+        NeedHelpVo helpData = mNeedsHelpData.get(position);
+
+        viewHolder.statusColor.setBackgroundColor(mContext.getResources().getColor(helpData.statusColor));
+        viewHolder.username.setText(helpData.username);
+        viewHolder.date.setText(helpData.date);
+        viewHolder.struggle.setText(helpData.struggle);
         viewHolder.locationMarker.setImageDrawable(mContext.getResources().getDrawable(R.drawable.ic_action_place));
+        viewHolder.userGender.setImageDrawable(mContext.getResources().getDrawable(helpData.userGender));
+        viewHolder.location.setText(helpData.location);
 
         return rowView;
     }
