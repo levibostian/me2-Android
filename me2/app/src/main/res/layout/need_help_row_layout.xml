@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="155dp"
+    android:layout_height="175dp"
     android:padding="15dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:weightSum="1">
 
         <ImageView
             android:id="@+id/status_color"
@@ -28,15 +29,23 @@
             android:text="super cheese"
             tools:text="super cheese"/>
 
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:paddingTop="8dip"
+            android:gravity="right"
+            android:text="5 hours ago"/>
+
     </LinearLayout>
 
     <TextView
         android:id="@+id/struggle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="8dip"
-        android:paddingLeft="8dip"
-        android:paddingRight="8dip"
+        android:padding="8dip"
         android:maxLines="3"
         android:textSize="16sp"
         android:ellipsize="end"
@@ -49,13 +58,24 @@ Repulsive questions contented him few extensive supported. Of remarkably thoroug
         android:orientation="horizontal"
         android:weightSum="1">
 
-        <TextView
-            android:id="@+id/date"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="12sp"
-            android:paddingTop="8dip"
-            android:text="January 29"/>
+        <Button
+            android:id="@+id/me_2_button"
+            android:text="Me 2"
+            android:textColor="#249BAD"
+            android:textSize="18sp"
+            android:layout_width="60dp"
+            android:layout_height="35dp"
+            android:background="@drawable/me_2_button"/>
+
+        <Button
+            android:id="@+id/love_button"
+            android:text="Love"
+            android:textColor="#249BAD"
+            android:textSize="18sp"
+            android:layout_width="60dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="8dip"
+            android:background="@drawable/me_2_button"/>
 
         <View
             android:layout_width="0dp"
