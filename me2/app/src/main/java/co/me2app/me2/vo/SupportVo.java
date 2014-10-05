@@ -2,16 +2,15 @@ package co.me2app.me2.vo;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import co.me2app.me2.R;
 
 public class SupportVo implements Parcelable {
 
-    public int statusColor = R.color.red;
-    public String username = "super cheese";
-    public String date = "5 hours ago";
-    public String support = "I feel ya.";
-    public int userGender = R.drawable.user_male;
-    public String location = "Iowa, USA";
+    public int statusColor;
+    public String username;
+    public String date;
+    public String support;
+    public int userGender;
+    public String location;
 
     @Override
     public int describeContents() {

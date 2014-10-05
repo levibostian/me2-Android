@@ -14,6 +14,7 @@ import co.me2app.me2.R;
 import co.me2app.me2.adapter.GetHelpListViewAdapter;
 import co.me2app.me2.fragment.dialog.MoodColorChooseDialogFragment;
 import co.me2app.me2.fragment.dialog.PostSituationDialogFragment;
+import co.me2app.me2.vo.MockSupportVos;
 import co.me2app.me2.vo.SupportVo;
 
 import java.util.ArrayList;
@@ -44,9 +45,11 @@ public class GetHelpFragment extends Fragment implements MoodColorChooseDialogFr
         mCurrentMoodColor = getResources().getColor(R.color.gray);
 
         mHelpData = new ArrayList<SupportVo>();
-        mHelpData.add(new SupportVo());
-        mHelpData.add(new SupportVo());
-        mHelpData.add(new SupportVo());
+        mHelpData.add(MockSupportVos.getSupport1());
+        mHelpData.add(MockSupportVos.getSupport2());
+        mHelpData.add(MockSupportVos.getSupport3());
+        mHelpData.add(MockSupportVos.getSupport4());
+        mHelpData.add(MockSupportVos.getSupport5());
 
         mListAdapter = new GetHelpListViewAdapter(getActivity(), R.layout.get_help_row_layout, mHelpData);
     }

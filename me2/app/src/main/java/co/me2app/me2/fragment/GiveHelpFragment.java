@@ -12,6 +12,7 @@ import android.widget.ListView;
 import co.me2app.me2.R;
 import co.me2app.me2.adapter.GiveHelpListViewAdapter;
 import co.me2app.me2.fragment.dialog.GiveHelpDetailsDialogFragment;
+import co.me2app.me2.vo.MockSituationVos;
 import co.me2app.me2.vo.SituationVo;
 
 import java.util.ArrayList;
@@ -35,9 +36,11 @@ public class GiveHelpFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         mHelpData = new ArrayList<SituationVo>();
-        mHelpData.add(new SituationVo());
-        mHelpData.add(new SituationVo());
-        mHelpData.add(new SituationVo());
+        mHelpData.add(MockSituationVos.getSituation1());
+        mHelpData.add(MockSituationVos.getSituation2());
+        mHelpData.add(MockSituationVos.getSituation3());
+        mHelpData.add(MockSituationVos.getSituation4());
+        mHelpData.add(MockSituationVos.getSituation5());
 
         mListAdapter = new GiveHelpListViewAdapter(getActivity(), R.layout.give_help_row_layout, mHelpData);
     }
