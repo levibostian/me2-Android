@@ -12,6 +12,7 @@ import android.widget.Toast;
 import co.me2app.me2.R;
 import co.me2app.me2.adapter.GiveHelpListViewAdapter;
 import co.me2app.me2.fragment.dialog.GiveHelpDetailsDialogFragment;
+import co.me2app.me2.fragment.dialog.LoveChooserDialogFragment;
 import co.me2app.me2.fragment.dialog.Me2ChooserDialogFragment;
 import co.me2app.me2.vo.MockSituationVos;
 import co.me2app.me2.vo.SituationVo;
@@ -103,6 +104,22 @@ public class GiveHelpFragment extends Fragment implements GiveHelpListViewAdapte
 
     @Override
     public void loveButtonClicked() {
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        Fragment previous = getFragmentManager().findFragmentByTag(DETAILS_DIALOG_TAG);
 
+        if (previous != null) {
+            transaction.remove(previous);
+        }
+        transaction.addToBackStack(null);
+
+        final LoveChooserDialogFragment loveChooserDialogFragment = LoveChooserDialogFragment.newInstance();
+        loveChooserDialogFragment.setLoveChooserListener(new LoveChooserDialogFragment.LoveChooserListener() {
+            @Override
+            public void loveChosen(String loveMessage) {
+                Toast.makeText(getActivity(), R.string.love_sent, Toast.LENGTH_LONG).show();
+            }
+        });
+
+        loveChooserDialogFragment.show(transaction, DETAILS_DIALOG_TAG);
     }
 }
