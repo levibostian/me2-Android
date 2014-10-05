@@ -13,6 +13,7 @@ import android.widget.Toast;
 import co.me2app.me2.R;
 import co.me2app.me2.adapter.GetHelpListViewAdapter;
 import co.me2app.me2.fragment.dialog.MoodColorChooseDialogFragment;
+import co.me2app.me2.fragment.dialog.PostSituationDialogFragment;
 import co.me2app.me2.vo.NeedHelpVo;
 
 import java.util.ArrayList;
@@ -20,6 +21,7 @@ import java.util.ArrayList;
 public class GetHelpFragment extends Fragment implements MoodColorChooseDialogFragment.MoodColorChooserListener {
 
     private static final String MOOD_COLOR_CHANGE_TAG = "getHelpFragment.moodColorChangeTag";
+    private static final String DETAILS_DIALOG_TAG = "getHelpFragment.detailsDialogTag";
 
     private ListView mHelpList;
     private ImageView mMoodStatus;
@@ -99,7 +101,23 @@ public class GetHelpFragment extends Fragment implements MoodColorChooseDialogFr
     }
 
     private void showPostSituationPrompt() {
-        Toast.makeText(getActivity(), "post", Toast.LENGTH_SHORT).show();
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        Fragment previous = getFragmentManager().findFragmentByTag(DETAILS_DIALOG_TAG);
+
+        if (previous != null) {
+            transaction.remove(previous);
+        }
+        transaction.addToBackStack(null);
+
+        PostSituationDialogFragment detailsDialog = PostSituationDialogFragment.newInstance();
+        detailsDialog.setPostSituationListener(new PostSituationDialogFragment.PostSituationListener() {
+            @Override
+            public void situationPosted(String situation, String category) {
+                // TODO change all of this depending on if user wants to update their situation or post new.
+                Toast.makeText(getActivity(), getString(R.string.situation_posted), Toast.LENGTH_LONG).show();
+            }
+        });
+        detailsDialog.show(transaction, DETAILS_DIALOG_TAG);
     }
 
     @Override

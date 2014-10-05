@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="categories">
+        <item>Family</item>
+        <item>Friends</item>
+        <item>Pets</item>
+        <item>School</item>
+        <item>Personal</item>
+    </string-array>
+
+    <string name="post_situation">Why are you feeling down?</string>
+    <string name="struggle_hint">Tell us about it.</string>
+    <string name="situation_posted">Everything is going to be ok. \nHope you feel better soon!</string>
+    <string name="choose_category_explain">What is it about?</string>
+</resources>
