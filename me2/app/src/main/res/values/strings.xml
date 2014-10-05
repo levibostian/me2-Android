@@ -2,4 +2,5 @@
 <resources>
     <string name="app_name">me2</string>
     <string name="logout">Logout</string>
+    <string name="set_mood">How are you feeling today?</string>
 </resources>

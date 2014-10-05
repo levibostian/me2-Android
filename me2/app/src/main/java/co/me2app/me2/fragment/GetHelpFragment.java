@@ -2,6 +2,7 @@ package co.me2app.me2.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,16 +12,21 @@ import android.widget.ListView;
 import android.widget.Toast;
 import co.me2app.me2.R;
 import co.me2app.me2.adapter.GetHelpListViewAdapter;
+import co.me2app.me2.fragment.dialog.MoodColorChooseDialogFragment;
 import co.me2app.me2.vo.NeedHelpVo;
 
 import java.util.ArrayList;
 
-public class GetHelpFragment extends Fragment {
+public class GetHelpFragment extends Fragment implements MoodColorChooseDialogFragment.MoodColorChooserListener {
+
+    private static final String MOOD_COLOR_CHANGE_TAG = "getHelpFragment.moodColorChangeTag";
 
     private ListView mHelpList;
     private ImageView mMoodStatus;
     private Button mPostSituation;
     private GetHelpListViewAdapter mListAdapter;
+
+    private int mCurrentMoodColor;
 
     private ArrayList<NeedHelpVo> mHelpData;
 
@@ -32,6 +38,8 @@ public class GetHelpFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        mCurrentMoodColor = getResources().getColor(android.R.color.holo_green_light);
 
         mHelpData = new ArrayList<NeedHelpVo>();
         mHelpData.add(new NeedHelpVo());
@@ -56,7 +64,7 @@ public class GetHelpFragment extends Fragment {
         mPostSituation = (Button) view.findViewById(R.id.update_situation);
 
         mHelpList.setAdapter(mListAdapter);
-        mMoodStatus.setBackgroundColor(getResources().getColor(getUserCurrentMood()));
+        setCurrentColorMood();
         mMoodStatus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -71,15 +79,33 @@ public class GetHelpFragment extends Fragment {
         });
     }
 
+    private void setCurrentColorMood() {
+        mMoodStatus.setBackgroundColor(mCurrentMoodColor);
+    }
+
     private void showMoodChangeDialog() {
-        Toast.makeText(getActivity(), "mood", Toast.LENGTH_SHORT).show();
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        Fragment previous = getFragmentManager().findFragmentByTag(MOOD_COLOR_CHANGE_TAG);
+
+        if (previous != null) {
+            transaction.remove(previous);
+        }
+        transaction.addToBackStack(null);
+
+        MoodColorChooseDialogFragment moodColorChooserDialog = MoodColorChooseDialogFragment.newInstance(mCurrentMoodColor);
+        moodColorChooserDialog.setMoodColorChooserListener(this);
+
+        moodColorChooserDialog.show(transaction, MOOD_COLOR_CHANGE_TAG);
     }
 
     private void showPostSituationPrompt() {
         Toast.makeText(getActivity(), "post", Toast.LENGTH_SHORT).show();
     }
 
-    private int getUserCurrentMood() {
-        return android.R.color.holo_green_light;
+    @Override
+    public void moodColorSelected(int color) {
+        mCurrentMoodColor = color;
+
+        setCurrentColorMood();
     }
 }

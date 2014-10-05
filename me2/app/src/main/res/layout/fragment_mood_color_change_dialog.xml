@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <co.me2app.me2.view.MoodColorChanger
+            android:id="@+id/green"
+            android:layout_width="100dip"
+            android:layout_height="100dip"
+            android:padding="8dip"
+            custom:mood_color="@android:color/holo_green_light"
+            custom:mood_definition="Sad"/>
+
+        <co.me2app.me2.view.MoodColorChanger
+            android:layout_width="100dip"
+            android:layout_height="100dip"
+            android:padding="8dip"
+            custom:mood_color="@android:color/holo_green_light"
+            custom:mood_definition="Sad"/>
+
+        <co.me2app.me2.view.MoodColorChanger
+            android:layout_width="100dip"
+            android:layout_height="100dip"
+            android:padding="8dip"
+            custom:mood_color="@android:color/holo_green_light"
+            custom:mood_definition="Sad"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <co.me2app.me2.view.MoodColorChanger
+            android:layout_width="100dip"
+            android:layout_height="100dip"
+            android:padding="8dip"
+            custom:mood_color="@android:color/holo_green_light"
+            custom:mood_definition="Sad"/>
+
+        <co.me2app.me2.view.MoodColorChanger
+            android:layout_width="100dip"
+            android:layout_height="100dip"
+            android:padding="8dip"
+            custom:mood_color="@android:color/holo_green_light"
+            custom:mood_definition="Sad"/>
+
+        <co.me2app.me2.view.MoodColorChanger
+            android:layout_width="100dip"
+            android:layout_height="100dip"
+            android:padding="8dip"
+            custom:mood_color="@android:color/holo_green_light"
+            custom:mood_definition="Sad"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <co.me2app.me2.view.MoodColorChanger
+            android:layout_width="100dip"
+            android:layout_height="100dip"
+            android:padding="8dip"
+            custom:mood_color="@android:color/holo_green_light"
+            custom:mood_definition="Sad"/>
+
+        <co.me2app.me2.view.MoodColorChanger
+            android:layout_width="100dip"
+            android:layout_height="100dip"
+            android:padding="8dip"
+            custom:mood_color="@android:color/holo_green_light"
+            custom:mood_definition="Sad"/>
+
+        <co.me2app.me2.view.MoodColorChanger
+            android:layout_width="100dip"
+            android:layout_height="100dip"
+            android:padding="8dip"
+            custom:mood_color="@android:color/holo_green_light"
+            custom:mood_definition="Sad"/>
+
+    </LinearLayout>
+
+</LinearLayout>
