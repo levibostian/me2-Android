@@ -8,7 +8,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 import co.me2app.me2.R;
 import co.me2app.me2.vo.SituationVo;
 
@@ -19,6 +18,17 @@ public class GiveHelpListViewAdapter extends ArrayAdapter<SituationVo> {
 
     private ArrayList<SituationVo> mHelpData;
     private Context mContext;
+
+    private GiveHelpListListener mListener;
+
+    public interface GiveHelpListListener {
+        public void me2ButtonClicked();
+        public void loveButtonClicked();
+    }
+
+    public void setGiveHelpListListener(GiveHelpListListener listener) {
+        mListener = listener;
+    }
 
     public GiveHelpListViewAdapter(Context context, int resource, List<SituationVo> objects) {
         super(context, resource, objects);
@@ -73,13 +83,13 @@ public class GiveHelpListViewAdapter extends ArrayAdapter<SituationVo> {
         viewHolder.me2Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getContext(), "me2", Toast.LENGTH_SHORT).show();
+                mListener.me2ButtonClicked();
             }
         });
         viewHolder.loveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getContext(), "love", Toast.LENGTH_SHORT).show();
+                mListener.loveButtonClicked();
             }
         });
         viewHolder.userGender.setImageDrawable(mContext.getResources().getDrawable(helpData.userGender));

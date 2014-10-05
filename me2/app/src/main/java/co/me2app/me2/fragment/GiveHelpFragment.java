@@ -1,7 +1,6 @@
 package co.me2app.me2.fragment;
 
 import android.os.Bundle;
-import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
@@ -9,20 +8,24 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 import co.me2app.me2.R;
 import co.me2app.me2.adapter.GiveHelpListViewAdapter;
 import co.me2app.me2.fragment.dialog.GiveHelpDetailsDialogFragment;
+import co.me2app.me2.fragment.dialog.Me2ChooserDialogFragment;
 import co.me2app.me2.vo.MockSituationVos;
 import co.me2app.me2.vo.SituationVo;
 
 import java.util.ArrayList;
 
-public class GiveHelpFragment extends Fragment {
+public class GiveHelpFragment extends Fragment implements GiveHelpListViewAdapter.GiveHelpListListener, GiveHelpDetailsDialogFragment.GiveHelpDetailsListener {
 
     private static final String DETAILS_DIALOG_TAG = "giveHelpFragment.detailsDialogTag";
 
     private ListView mHelpList;
     private GiveHelpListViewAdapter mListAdapter;
+
+    private GiveHelpDetailsDialogFragment mDetailsFragment;
 
     private ArrayList<SituationVo> mHelpData;
 
@@ -43,6 +46,7 @@ public class GiveHelpFragment extends Fragment {
         mHelpData.add(MockSituationVos.getSituation5());
 
         mListAdapter = new GiveHelpListViewAdapter(getActivity(), R.layout.give_help_row_layout, mHelpData);
+        mListAdapter.setGiveHelpListListener(this);
     }
 
     @Override
@@ -67,11 +71,38 @@ public class GiveHelpFragment extends Fragment {
                 }
                 transaction.addToBackStack(null);
 
-                DialogFragment detailsDialog = GiveHelpDetailsDialogFragment.newInstance(mHelpData.get(position));
-                detailsDialog.show(transaction, DETAILS_DIALOG_TAG);
+                mDetailsFragment = GiveHelpDetailsDialogFragment.newInstance(mHelpData.get(position));
+                mDetailsFragment.setGiveHelpDetailsListener(GiveHelpFragment.this);
+
+                mDetailsFragment.show(transaction, DETAILS_DIALOG_TAG);
             }
         });
         mHelpList.setAdapter(mListAdapter);
     }
 
+    @Override
+    public void me2ButtonClicked() {
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        Fragment previous = getFragmentManager().findFragmentByTag(DETAILS_DIALOG_TAG);
+
+        if (previous != null) {
+            transaction.remove(previous);
+        }
+        transaction.addToBackStack(null);
+
+        final Me2ChooserDialogFragment me2ChooserDialogFragment = Me2ChooserDialogFragment.newInstance();
+        me2ChooserDialogFragment.setMe2ChooserListener(new Me2ChooserDialogFragment.Me2ChooserListener() {
+            @Override
+            public void me2Chosen(String me2message) {
+                Toast.makeText(getActivity(), R.string.me2_sent, Toast.LENGTH_LONG).show();
+            }
+        });
+
+        me2ChooserDialogFragment.show(transaction, DETAILS_DIALOG_TAG);
+    }
+
+    @Override
+    public void loveButtonClicked() {
+
+    }
 }

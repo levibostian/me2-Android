@@ -9,7 +9,6 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 import co.me2app.me2.R;
 import co.me2app.me2.vo.SituationVo;
 
@@ -18,6 +17,17 @@ public class GiveHelpDetailsDialogFragment extends DialogFragment {
     private static final String NEED_HELP_KEY = "giveHelpDetailsDialogFragment.needHelpKey";
 
     private SituationVo mNeedHelpData;
+
+    private GiveHelpDetailsListener mListener;
+
+    public interface GiveHelpDetailsListener {
+        public void me2ButtonClicked();
+        public void loveButtonClicked();
+    }
+
+    public void setGiveHelpDetailsListener(GiveHelpDetailsListener listener) {
+        mListener = listener;
+    }
 
     public static GiveHelpDetailsDialogFragment newInstance(SituationVo needHelpData) {
         GiveHelpDetailsDialogFragment fragment = new GiveHelpDetailsDialogFragment();
@@ -71,13 +81,13 @@ public class GiveHelpDetailsDialogFragment extends DialogFragment {
         me2button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getActivity(), "me2", Toast.LENGTH_SHORT).show();
+                mListener.me2ButtonClicked();
             }
         });
         loveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getActivity(), "love", Toast.LENGTH_SHORT).show();
+                mListener.loveButtonClicked();
             }
         });
 

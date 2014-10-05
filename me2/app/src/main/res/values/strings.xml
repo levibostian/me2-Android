@@ -3,4 +3,8 @@
     <string name="app_name">me2</string>
     <string name="logout">Logout</string>
     <string name="set_mood">How are you feeling today?</string>
+
+    <string name="me2_sent">Me 2 sent. \n It\'s great you can help!</string>
+    <string name="love_sent">Love sent. \n Thank you for helping!</string>
+    <string name="how_do_you_relate">How do you relate?</string>
 </resources>
