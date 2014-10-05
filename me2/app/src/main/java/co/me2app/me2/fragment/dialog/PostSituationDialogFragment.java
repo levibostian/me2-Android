@@ -1,6 +1,5 @@
 package co.me2app.me2.fragment.dialog;
 
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.view.LayoutInflater;
@@ -9,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import co.me2app.me2.R;
-import co.me2app.me2.util.KeyboardUtil;
 import co.me2app.me2.view.ChooseCategory;
 
 public class PostSituationDialogFragment extends DialogFragment {
@@ -46,21 +44,11 @@ public class PostSituationDialogFragment extends DialogFragment {
             public void onClick(View view) {
                 mListener.situationPosted(mSituation.getText().toString(), mChooseCategory.getSelectedSituation());
 
-                KeyboardUtil.closeKeyboard(getActivity(), mSituation);
                 getDialog().cancel();
             }
         });
 
-        KeyboardUtil.openKeyboard(getActivity());
-
         return view;
-    }
-
-    @Override
-    public void onCancel(DialogInterface dialog) {
-        KeyboardUtil.closeKeyboard(getActivity(), mSituation);
-
-        super.onCancel(dialog);
     }
 
     @Override
