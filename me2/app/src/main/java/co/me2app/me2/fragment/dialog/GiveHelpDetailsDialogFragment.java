@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -55,8 +54,6 @@ public class GiveHelpDetailsDialogFragment extends DialogFragment {
         TextView location = (TextView) view.findViewById(R.id.location);
         Button me2button = (Button) view.findViewById(R.id.me_2_button);
         Button loveButton = (Button) view.findViewById(R.id.love_button);
-        final EditText comment = (EditText) view.findViewById(R.id.comment);
-        Button sendComment = (Button) view.findViewById(R.id.send_comment);
 
         close.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,12 +78,6 @@ public class GiveHelpDetailsDialogFragment extends DialogFragment {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getActivity(), "love", Toast.LENGTH_SHORT).show();
-            }
-        });
-        sendComment.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(getActivity(), comment.getText(), Toast.LENGTH_SHORT).show();
             }
         });
 

@@ -125,30 +125,6 @@ Repulsive questions contented him few extensive supported. Of remarkably thoroug
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1">
-
-            <EditText
-                android:id="@+id/comment"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:hint="Comment"
-                android:layout_weight="1"/>
-
-            <Button
-                android:id="@+id/send_comment"
-                android:text="Send"
-                android:textColor="@color/theme_primary_color"
-                android:textSize="18sp"
-                android:layout_width="90dp"
-                android:layout_height="32dp"
-                android:layout_marginLeft="8dip"
-                android:background="@drawable/me_2_button"/>
-
-        </LinearLayout>
-
     </LinearLayout>
 
 </ScrollView>
