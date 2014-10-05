@@ -89,9 +89,9 @@ public class MainActivity extends ActionBarActivity {
             }
         };
 
-        actionBar.addTab(actionBar.newTab().setText(getString(R.string.tab_1_name)).setTabListener(tabListener)); // TODO tab names are not final. They *need* to change
-        actionBar.addTab(actionBar.newTab().setText(getString(R.string.tab_2_name)).setTabListener(tabListener)); // TODO tab names are not final. They *need* to change
-        actionBar.addTab(actionBar.newTab().setText(getString(R.string.tab_3_name)).setTabListener(tabListener)); // TODO tab names are not final. They *need* to change
+        actionBar.addTab(actionBar.newTab().setIcon(R.drawable.ear).setTabListener(tabListener));
+        actionBar.addTab(actionBar.newTab().setIcon(R.drawable.megaphone).setTabListener(tabListener));
+        actionBar.addTab(actionBar.newTab().setIcon(R.drawable.ic_action_call).setTabListener(tabListener));
     }
 
     private void switchToSelectedTab(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
