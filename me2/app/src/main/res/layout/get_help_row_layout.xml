@@ -85,11 +85,10 @@ Repulsive questions contented him few extensive supported. Of remarkably thoroug
 
         <ImageView
             android:id="@+id/user_gender"
-            android:layout_width="10dip"
-            android:layout_height="10dip"
-            android:layout_marginLeft="5dip"
-            android:layout_marginTop="8dip"
-            tools:background="@android:color/holo_orange_dark"/>
+            android:layout_width="27dip"
+            android:layout_height="27dip"
+            android:layout_marginTop="2dip"
+            tools:background="@drawable/user_male"/>
 
         <ImageView
             android:id="@+id/location_marker"
