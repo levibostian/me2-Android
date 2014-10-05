@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import co.me2app.me2.R;
-import co.me2app.me2.adapter.NeedsHelpListViewAdapter;
+import co.me2app.me2.adapter.GiveHelpListViewAdapter;
 import co.me2app.me2.fragment.dialog.GiveHelpDetailsDialogFragment;
 import co.me2app.me2.vo.NeedHelpVo;
 
@@ -20,10 +20,10 @@ public class GiveHelpFragment extends Fragment {
 
     private static final String DETAILS_DIALOG_TAG = "giveHelpFragment.detailsDialogTag";
 
-    private ListView mNeedsHelpList;
-    private NeedsHelpListViewAdapter mNeedsHelpListAdapter;
+    private ListView mHelpList;
+    private GiveHelpListViewAdapter mListAdapter;
 
-    private ArrayList<NeedHelpVo> mNeedsHelpData;
+    private ArrayList<NeedHelpVo> mHelpData;
 
     public static GiveHelpFragment newInstance() {
         GiveHelpFragment fragment = new GiveHelpFragment();
@@ -34,26 +34,26 @@ public class GiveHelpFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        mNeedsHelpData = new ArrayList<NeedHelpVo>();
-        mNeedsHelpData.add(new NeedHelpVo());
-        mNeedsHelpData.add(new NeedHelpVo());
-        mNeedsHelpData.add(new NeedHelpVo());
+        mHelpData = new ArrayList<NeedHelpVo>();
+        mHelpData.add(new NeedHelpVo());
+        mHelpData.add(new NeedHelpVo());
+        mHelpData.add(new NeedHelpVo());
 
-        mNeedsHelpListAdapter = new NeedsHelpListViewAdapter(getActivity(), R.layout.need_help_row_layout, mNeedsHelpData);
+        mListAdapter = new GiveHelpListViewAdapter(getActivity(), R.layout.give_help_row_layout, mHelpData);
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_send_help, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_give_help, container, false);
         setupViews(rootView);
 
         return rootView;
     }
 
     private void setupViews(View view) {
-        mNeedsHelpList = (ListView) view.findViewById(R.id.need_help_list);
-        mNeedsHelpList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        mHelpList = (ListView) view.findViewById(R.id.give_help_list);
+        mHelpList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
@@ -64,11 +64,11 @@ public class GiveHelpFragment extends Fragment {
                 }
                 transaction.addToBackStack(null);
 
-                DialogFragment detailsDialog = GiveHelpDetailsDialogFragment.newInstance(mNeedsHelpData.get(position));
+                DialogFragment detailsDialog = GiveHelpDetailsDialogFragment.newInstance(mHelpData.get(position));
                 detailsDialog.show(transaction, DETAILS_DIALOG_TAG);
             }
         });
-        mNeedsHelpList.setAdapter(mNeedsHelpListAdapter);
+        mHelpList.setAdapter(mListAdapter);
     }
 
 }

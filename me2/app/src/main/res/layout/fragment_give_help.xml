@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <ListView
-        android:id="@+id/need_help_list"
+        android:id="@+id/give_help_list"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:focusable="true"

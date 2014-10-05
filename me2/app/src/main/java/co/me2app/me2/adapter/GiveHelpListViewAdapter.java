@@ -15,15 +15,15 @@ import co.me2app.me2.vo.NeedHelpVo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class NeedsHelpListViewAdapter extends ArrayAdapter<NeedHelpVo> {
+public class GiveHelpListViewAdapter extends ArrayAdapter<NeedHelpVo> {
 
-    private ArrayList<NeedHelpVo> mNeedsHelpData;
+    private ArrayList<NeedHelpVo> mHelpData;
     private Context mContext;
 
-    public NeedsHelpListViewAdapter(Context context, int resource, List<NeedHelpVo> objects) {
+    public GiveHelpListViewAdapter(Context context, int resource, List<NeedHelpVo> objects) {
         super(context, resource, objects);
 
-        mNeedsHelpData = (ArrayList<NeedHelpVo>) objects;
+        mHelpData = (ArrayList<NeedHelpVo>) objects;
         mContext = context;
     }
 
@@ -45,7 +45,7 @@ public class NeedsHelpListViewAdapter extends ArrayAdapter<NeedHelpVo> {
         
         if (rowView == null) {
             LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            rowView = inflater.inflate(R.layout.need_help_row_layout, parent, false);
+            rowView = inflater.inflate(R.layout.give_help_row_layout, parent, false);
 
             ViewHolder viewHolder = new ViewHolder();
             viewHolder.statusColor = (ImageView) rowView.findViewById(R.id.status_color);
@@ -63,7 +63,7 @@ public class NeedsHelpListViewAdapter extends ArrayAdapter<NeedHelpVo> {
 
         ViewHolder viewHolder = (ViewHolder) rowView.getTag();
 
-        NeedHelpVo helpData = mNeedsHelpData.get(position);
+        NeedHelpVo helpData = mHelpData.get(position);
 
         viewHolder.statusColor.setBackgroundColor(mContext.getResources().getColor(helpData.statusColor));
         viewHolder.username.setText(helpData.username);
