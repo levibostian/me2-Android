@@ -5,7 +5,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import co.me2app.me2.fragment.GetHelpFragment;
 import co.me2app.me2.fragment.GiveHelpFragment;
-import co.me2app.me2.fragment.SupportFragment;
+import co.me2app.me2.fragment.HotlineFragment;
 
 public class ViewPagerNavigationAdapter extends FragmentPagerAdapter {
 
@@ -27,7 +27,7 @@ public class ViewPagerNavigationAdapter extends FragmentPagerAdapter {
             case SEND_HELP_INDEX:
                 return GiveHelpFragment.newInstance();
             case SUPPORT_INDEX:
-                return SupportFragment.newInstance();
+                return HotlineFragment.newInstance();
         }
 
         throw new IllegalStateException("There is something wrong with the number of items in the viewpager navigation");
