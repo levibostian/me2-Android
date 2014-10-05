@@ -4,7 +4,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import co.me2app.me2.fragment.GetHelpFragment;
-import co.me2app.me2.fragment.SendHelpFragment;
+import co.me2app.me2.fragment.GiveHelpFragment;
 import co.me2app.me2.fragment.SupportFragment;
 
 public class ViewPagerNavigationAdapter extends FragmentPagerAdapter {
@@ -25,7 +25,7 @@ public class ViewPagerNavigationAdapter extends FragmentPagerAdapter {
             case GET_HELP_INDEX:
                 return GetHelpFragment.newInstance();
             case SEND_HELP_INDEX:
-                return SendHelpFragment.newInstance();
+                return GiveHelpFragment.newInstance();
             case SUPPORT_INDEX:
                 return SupportFragment.newInstance();
         }

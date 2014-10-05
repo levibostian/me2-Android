@@ -5,8 +5,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 import co.me2app.me2.R;
 import co.me2app.me2.vo.NeedHelpVo;
 
@@ -30,6 +32,8 @@ public class NeedsHelpListViewAdapter extends ArrayAdapter<NeedHelpVo> {
         public TextView username;
         public TextView struggle;
         public TextView date;
+        public Button me2Button;
+        public Button loveButton;
         public ImageView userGender;
         public ImageView locationMarker;
         public TextView location;
@@ -48,6 +52,8 @@ public class NeedsHelpListViewAdapter extends ArrayAdapter<NeedHelpVo> {
             viewHolder.username = (TextView) rowView.findViewById(R.id.username);
             viewHolder.struggle = (TextView) rowView.findViewById(R.id.struggle);
             viewHolder.date = (TextView) rowView.findViewById(R.id.date);
+            viewHolder.me2Button = (Button) rowView.findViewById(R.id.me_2_button);
+            viewHolder.loveButton = (Button) rowView.findViewById(R.id.love_button);
             viewHolder.userGender = (ImageView) rowView.findViewById(R.id.user_gender);
             viewHolder.locationMarker = (ImageView) rowView.findViewById(R.id.location_marker);
             viewHolder.location = (TextView) rowView.findViewById(R.id.location);
@@ -64,6 +70,18 @@ public class NeedsHelpListViewAdapter extends ArrayAdapter<NeedHelpVo> {
         viewHolder.date.setText(helpData.date);
         viewHolder.struggle.setText(helpData.struggle);
         viewHolder.locationMarker.setImageDrawable(mContext.getResources().getDrawable(R.drawable.ic_action_place));
+        viewHolder.me2Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getContext(), "me2", Toast.LENGTH_SHORT).show();
+            }
+        });
+        viewHolder.loveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getContext(), "love", Toast.LENGTH_SHORT).show();
+            }
+        });
         viewHolder.userGender.setImageDrawable(mContext.getResources().getDrawable(helpData.userGender));
         viewHolder.location.setText(helpData.location);
 

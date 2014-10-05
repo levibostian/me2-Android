@@ -64,6 +64,7 @@ Repulsive questions contented him few extensive supported. Of remarkably thoroug
             android:textSize="18sp"
             android:layout_width="60dp"
             android:layout_height="35dp"
+            android:focusable="false"
             android:background="@drawable/me_2_button"/>
 
         <Button
@@ -74,6 +75,7 @@ Repulsive questions contented him few extensive supported. Of remarkably thoroug
             android:layout_width="60dp"
             android:layout_height="35dp"
             android:layout_marginLeft="8dip"
+            android:focusable="false"
             android:background="@drawable/me_2_button"/>
 
         <View

@@ -9,6 +9,8 @@
         android:id="@+id/need_help_list"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:focusable="true"
+        android:background="@android:color/white"
         tools:listitem="@layout/need_help_row_layout"/>
 
 </LinearLayout>
