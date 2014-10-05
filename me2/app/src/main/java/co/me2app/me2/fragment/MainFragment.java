@@ -10,7 +10,7 @@ import co.me2app.me2.R;
 
 public class MainFragment extends Fragment {
 
-    public static MainFragment newInstance(int sectionNumber) {
+    public static MainFragment newInstance() {
         MainFragment fragment = new MainFragment();
         return fragment;
     }
