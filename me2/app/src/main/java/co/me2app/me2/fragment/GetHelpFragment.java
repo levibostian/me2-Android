@@ -26,7 +26,7 @@ public class GetHelpFragment extends Fragment implements MoodColorChooseDialogFr
 
     private ListView mHelpList;
     private ImageView mMoodStatus;
-    private Button mPostSituation;
+    private ImageView mPostSituation;
     private GetHelpListViewAdapter mListAdapter;
 
     private int mCurrentMoodColor;
@@ -66,7 +66,7 @@ public class GetHelpFragment extends Fragment implements MoodColorChooseDialogFr
     private void setupViews(View view) {
         mHelpList = (ListView) view.findViewById(R.id.get_help_list);
         mMoodStatus = (ImageView) view.findViewById(R.id.mood_status);
-        mPostSituation = (Button) view.findViewById(R.id.update_situation);
+        mPostSituation = (ImageView) view.findViewById(R.id.update_situation);
 
         mHelpList.setAdapter(mListAdapter);
         setCurrentColorMood();

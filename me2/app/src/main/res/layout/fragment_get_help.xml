@@ -37,17 +37,13 @@
             android:layout_marginRight="8dip"
             tools:background="@android:color/holo_green_light"/>
 
-        <Button
+        <ImageView
             android:id="@+id/update_situation"
-            android:text="Feeling down?"
-            android:textColor="@color/theme_primary_color"
-            android:textSize="18sp"
-            android:layout_width="120dp"
-            android:layout_height="36dp"
-            android:focusable="false"
-            android:layout_marginLeft="8dip"
-            android:gravity="center"
-            android:background="@drawable/me_2_button"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/button_today"
+            android:paddingLeft="8dip"
+            android:layout_gravity="center"/>
 
     </LinearLayout>
     

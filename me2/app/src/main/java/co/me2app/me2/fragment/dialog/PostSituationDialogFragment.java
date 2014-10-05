@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import co.me2app.me2.R;
 import co.me2app.me2.view.ChooseCategory;
 
@@ -16,7 +17,7 @@ public class PostSituationDialogFragment extends DialogFragment {
 
     private EditText mSituation;
     private ChooseCategory mChooseCategory;
-    private Button mPostSituation;
+    private ImageView mPostSituation;
 
     public interface PostSituationListener {
         public void situationPosted(String situation, String category);
@@ -37,7 +38,7 @@ public class PostSituationDialogFragment extends DialogFragment {
 
         mSituation = (EditText) view.findViewById(R.id.situation);
         mChooseCategory = (ChooseCategory) view.findViewById(R.id.choose_category);
-        mPostSituation = (Button) view.findViewById(R.id.post_button);
+        mPostSituation = (ImageView) view.findViewById(R.id.post_button);
 
         mPostSituation.setOnClickListener(new View.OnClickListener() {
             @Override

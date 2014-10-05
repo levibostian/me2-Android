@@ -42,8 +42,8 @@ public class GiveHelpListViewAdapter extends ArrayAdapter<SituationVo> {
         public TextView username;
         public TextView struggle;
         public TextView date;
-        public Button me2Button;
-        public Button loveButton;
+        public ImageView me2Button;
+        public ImageView loveButton;
         public ImageView userGender;
         public ImageView locationMarker;
         public TextView location;
@@ -62,8 +62,8 @@ public class GiveHelpListViewAdapter extends ArrayAdapter<SituationVo> {
             viewHolder.username = (TextView) rowView.findViewById(R.id.username);
             viewHolder.struggle = (TextView) rowView.findViewById(R.id.struggle);
             viewHolder.date = (TextView) rowView.findViewById(R.id.date);
-            viewHolder.me2Button = (Button) rowView.findViewById(R.id.me_2_button);
-            viewHolder.loveButton = (Button) rowView.findViewById(R.id.love_button);
+            viewHolder.me2Button = (ImageView) rowView.findViewById(R.id.me_2_button);
+            viewHolder.loveButton = (ImageView) rowView.findViewById(R.id.love_button);
             viewHolder.userGender = (ImageView) rowView.findViewById(R.id.user_gender);
             viewHolder.locationMarker = (ImageView) rowView.findViewById(R.id.location_marker);
             viewHolder.location = (TextView) rowView.findViewById(R.id.location);

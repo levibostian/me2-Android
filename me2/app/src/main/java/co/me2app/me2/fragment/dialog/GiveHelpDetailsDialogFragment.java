@@ -62,8 +62,8 @@ public class GiveHelpDetailsDialogFragment extends DialogFragment {
         ImageView userGender = (ImageView) view.findViewById(R.id.user_gender);
         ImageView locationMarker = (ImageView) view.findViewById(R.id.location_marker);
         TextView location = (TextView) view.findViewById(R.id.location);
-        Button me2button = (Button) view.findViewById(R.id.me_2_button);
-        Button loveButton = (Button) view.findViewById(R.id.love_button);
+        ImageView me2button = (ImageView) view.findViewById(R.id.me_2_button);
+        ImageView loveButton = (ImageView) view.findViewById(R.id.love_button);
 
         close.setOnClickListener(new View.OnClickListener() {
             @Override

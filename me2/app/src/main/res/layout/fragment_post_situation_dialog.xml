@@ -41,15 +41,12 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"/>
 
-            <Button
+            <ImageView
                 android:id="@+id/post_button"
-                android:text="Post"
-                android:textColor="@color/theme_primary_color"
-                android:textSize="18sp"
-                android:layout_width="60dp"
-                android:layout_height="35dp"
-                android:focusable="false"
-                android:background="@drawable/me_2_button"/>
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dip"
+                android:background="@drawable/button_post"/>
 
         </LinearLayout>
 
