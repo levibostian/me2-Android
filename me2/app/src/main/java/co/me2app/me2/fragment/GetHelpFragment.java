@@ -41,7 +41,7 @@ public class GetHelpFragment extends Fragment implements MoodColorChooseDialogFr
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        mCurrentMoodColor = getResources().getColor(android.R.color.holo_green_light);
+        mCurrentMoodColor = getResources().getColor(R.color.gray);
 
         mHelpData = new ArrayList<SupportVo>();
         mHelpData.add(new SupportVo());
