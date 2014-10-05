@@ -44,9 +44,25 @@ public class MoodColorChooseDialogFragment extends DialogFragment implements Moo
         getDialog().setTitle(getString(R.string.set_mood));
         View view = inflater.inflate(R.layout.fragment_mood_color_change_dialog, container);
 
+        final MoodColorChanger orange = (MoodColorChanger) view.findViewById(R.id.orange);
+        final MoodColorChanger yellow = (MoodColorChanger) view.findViewById(R.id.yellow);
         final MoodColorChanger green = (MoodColorChanger) view.findViewById(R.id.green);
+        final MoodColorChanger pink = (MoodColorChanger) view.findViewById(R.id.pink);
+        final MoodColorChanger blue = (MoodColorChanger) view.findViewById(R.id.blue);
+        final MoodColorChanger gray = (MoodColorChanger) view.findViewById(R.id.gray);
+        final MoodColorChanger purple = (MoodColorChanger) view.findViewById(R.id.purple);
+        final MoodColorChanger black = (MoodColorChanger) view.findViewById(R.id.black);
+        final MoodColorChanger red = (MoodColorChanger) view.findViewById(R.id.red);
 
+        orange.setMoodColorSelectedListener(this);
+        yellow.setMoodColorSelectedListener(this);
         green.setMoodColorSelectedListener(this);
+        pink.setMoodColorSelectedListener(this);
+        blue.setMoodColorSelectedListener(this);
+        gray.setMoodColorSelectedListener(this);
+        purple.setMoodColorSelectedListener(this);
+        black.setMoodColorSelectedListener(this);
+        red.setMoodColorSelectedListener(this);
 
         return view;
     }

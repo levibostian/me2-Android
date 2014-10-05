@@ -12,26 +12,28 @@
         android:orientation="horizontal">
 
         <co.me2app.me2.view.MoodColorChanger
+            android:id="@+id/orange"
+            android:layout_width="100dip"
+            android:layout_height="100dip"
+            android:padding="4dip"
+            custom:mood_color="@android:color/holo_green_light"
+            custom:mood_definition="Awesome"/>
+
+        <co.me2app.me2.view.MoodColorChanger
+            android:id="@+id/yellow"
+            android:layout_width="100dip"
+            android:layout_height="100dip"
+            android:padding="4dip"
+            custom:mood_color="@android:color/holo_green_light"
+            custom:mood_definition="Good"/>
+
+        <co.me2app.me2.view.MoodColorChanger
             android:id="@+id/green"
             android:layout_width="100dip"
             android:layout_height="100dip"
-            android:padding="8dip"
+            android:padding="4dip"
             custom:mood_color="@android:color/holo_green_light"
-            custom:mood_definition="Sad"/>
-
-        <co.me2app.me2.view.MoodColorChanger
-            android:layout_width="100dip"
-            android:layout_height="100dip"
-            android:padding="8dip"
-            custom:mood_color="@android:color/holo_green_light"
-            custom:mood_definition="Sad"/>
-
-        <co.me2app.me2.view.MoodColorChanger
-            android:layout_width="100dip"
-            android:layout_height="100dip"
-            android:padding="8dip"
-            custom:mood_color="@android:color/holo_green_light"
-            custom:mood_definition="Sad"/>
+            custom:mood_definition="Average"/>
 
     </LinearLayout>
 
@@ -41,25 +43,28 @@
         android:orientation="horizontal">
 
         <co.me2app.me2.view.MoodColorChanger
+            android:id="@+id/pink"
             android:layout_width="100dip"
             android:layout_height="100dip"
-            android:padding="8dip"
+            android:padding="4dip"
+            custom:mood_color="@android:color/holo_green_light"
+            custom:mood_definition="Loving"/>
+
+        <co.me2app.me2.view.MoodColorChanger
+            android:id="@+id/blue"
+            android:layout_width="100dip"
+            android:layout_height="100dip"
+            android:padding="4dip"
             custom:mood_color="@android:color/holo_green_light"
             custom:mood_definition="Sad"/>
 
         <co.me2app.me2.view.MoodColorChanger
+            android:id="@+id/gray"
             android:layout_width="100dip"
             android:layout_height="100dip"
-            android:padding="8dip"
+            android:padding="4dip"
             custom:mood_color="@android:color/holo_green_light"
-            custom:mood_definition="Sad"/>
-
-        <co.me2app.me2.view.MoodColorChanger
-            android:layout_width="100dip"
-            android:layout_height="100dip"
-            android:padding="8dip"
-            custom:mood_color="@android:color/holo_green_light"
-            custom:mood_definition="Sad"/>
+            custom:mood_definition="Lonely"/>
 
     </LinearLayout>
 
@@ -69,25 +74,28 @@
         android:orientation="horizontal">
 
         <co.me2app.me2.view.MoodColorChanger
+            android:id="@+id/purple"
             android:layout_width="100dip"
             android:layout_height="100dip"
-            android:padding="8dip"
+            android:padding="4dip"
             custom:mood_color="@android:color/holo_green_light"
-            custom:mood_definition="Sad"/>
+            custom:mood_definition="Fear"/>
 
         <co.me2app.me2.view.MoodColorChanger
+            android:id="@+id/black"
             android:layout_width="100dip"
             android:layout_height="100dip"
-            android:padding="8dip"
+            android:padding="4dip"
             custom:mood_color="@android:color/holo_green_light"
-            custom:mood_definition="Sad"/>
+            custom:mood_definition="Hurt"/>
 
         <co.me2app.me2.view.MoodColorChanger
+            android:id="@+id/red"
             android:layout_width="100dip"
             android:layout_height="100dip"
-            android:padding="8dip"
+            android:padding="4dip"
             custom:mood_color="@android:color/holo_green_light"
-            custom:mood_definition="Sad"/>
+            custom:mood_definition="Angry"/>
 
     </LinearLayout>
 
