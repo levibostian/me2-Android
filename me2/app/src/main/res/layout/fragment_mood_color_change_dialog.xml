@@ -16,7 +16,7 @@
             android:layout_width="100dip"
             android:layout_height="100dip"
             android:padding="4dip"
-            custom:mood_color="@android:color/holo_green_light"
+            custom:mood_color="@color/orange"
             custom:mood_definition="Awesome"/>
 
         <co.me2app.me2.view.MoodColorChanger
@@ -24,7 +24,7 @@
             android:layout_width="100dip"
             android:layout_height="100dip"
             android:padding="4dip"
-            custom:mood_color="@android:color/holo_green_light"
+            custom:mood_color="@color/yellow"
             custom:mood_definition="Good"/>
 
         <co.me2app.me2.view.MoodColorChanger
@@ -32,7 +32,7 @@
             android:layout_width="100dip"
             android:layout_height="100dip"
             android:padding="4dip"
-            custom:mood_color="@android:color/holo_green_light"
+            custom:mood_color="@color/green"
             custom:mood_definition="Average"/>
 
     </LinearLayout>
@@ -47,7 +47,7 @@
             android:layout_width="100dip"
             android:layout_height="100dip"
             android:padding="4dip"
-            custom:mood_color="@android:color/holo_green_light"
+            custom:mood_color="@color/pink"
             custom:mood_definition="Loving"/>
 
         <co.me2app.me2.view.MoodColorChanger
@@ -55,7 +55,7 @@
             android:layout_width="100dip"
             android:layout_height="100dip"
             android:padding="4dip"
-            custom:mood_color="@android:color/holo_green_light"
+            custom:mood_color="@color/blue"
             custom:mood_definition="Sad"/>
 
         <co.me2app.me2.view.MoodColorChanger
@@ -63,7 +63,7 @@
             android:layout_width="100dip"
             android:layout_height="100dip"
             android:padding="4dip"
-            custom:mood_color="@android:color/holo_green_light"
+            custom:mood_color="@color/gray"
             custom:mood_definition="Lonely"/>
 
     </LinearLayout>
@@ -78,7 +78,7 @@
             android:layout_width="100dip"
             android:layout_height="100dip"
             android:padding="4dip"
-            custom:mood_color="@android:color/holo_green_light"
+            custom:mood_color="@color/purple"
             custom:mood_definition="Fear"/>
 
         <co.me2app.me2.view.MoodColorChanger
@@ -86,7 +86,7 @@
             android:layout_width="100dip"
             android:layout_height="100dip"
             android:padding="4dip"
-            custom:mood_color="@android:color/holo_green_light"
+            custom:mood_color="@color/black"
             custom:mood_definition="Hurt"/>
 
         <co.me2app.me2.view.MoodColorChanger
@@ -94,7 +94,7 @@
             android:layout_width="100dip"
             android:layout_height="100dip"
             android:padding="4dip"
-            custom:mood_color="@android:color/holo_green_light"
+            custom:mood_color="@color/red"
             custom:mood_definition="Angry"/>
 
     </LinearLayout>
