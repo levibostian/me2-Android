@@ -20,7 +20,6 @@ import java.io.InputStreamReader;
 
 import co.me2app.me2.R;
 
-
 public class LogInActivity extends FragmentActivity {
 
     // Fields
@@ -35,7 +34,6 @@ public class LogInActivity extends FragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
 
 
         // Reading secret ids for Parse from file
@@ -59,14 +57,22 @@ public class LogInActivity extends FragmentActivity {
         signUpButton = (Button) findViewById(R.id.signUpButton);
         logInButton = (Button) findViewById(R.id.logInButton);
         loading = (ProgressBar) findViewById(R.id.progressBar);
-
+        loading.setVisibility(View.INVISIBLE);
 
         signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 logInButton.setVisibility(View.INVISIBLE);
                 signUpButton.setVisibility(View.INVISIBLE);
-                loading.setVisibility(View.VISIBLE);
+
+                if (email.equals("") || password.equals("")) {
+                    logInButton.setVisibility(View.VISIBLE);
+                    signUpButton.setVisibility(View.VISIBLE);
+
+                    Toast.makeText(LogInActivity.this, "Please complete credentials", Toast.LENGTH_LONG).show();
+
+                    return;
+                }
 
                 password = passwordField.getText().toString().trim();
                 email = userEmailField.getText().toString().trim();
@@ -78,16 +84,21 @@ public class LogInActivity extends FragmentActivity {
                 newUser.setPassword(password);
 
                 newUser.signUpInBackground(new SignUpCallback() {
+
                     @Override
                     public void done(ParseException e) {
-                        loading.setVisibility(View.INVISIBLE);
+                        //loading.setVisibility(View.INVISIBLE);
+                        ProgressBar bar = (ProgressBar) findViewById(R.id.progressBar);
+                        bar.setVisibility(View.VISIBLE);
                         if (e == null) {
+                            bar.setVisibility(View.INVISIBLE);
                             Toast.makeText(LogInActivity.this, "To Main", Toast.LENGTH_LONG).show();
 
 //                           Intent toMainActivity = new Intent(LogInActivity.this, MainActivity.class);
 //                           startActivity(toMainActivity);
 //                           finish();
                         } else {
+                            bar.setVisibility(View.INVISIBLE);
                             Log.d("Tag2", newUser.getUsername());
                             Toast.makeText(LogInActivity.this, "whoops", Toast.LENGTH_LONG).show();
                         }
@@ -103,7 +114,7 @@ public class LogInActivity extends FragmentActivity {
             public void onClick(View v) {
                 logInButton.setVisibility(View.INVISIBLE);
                 signUpButton.setVisibility(View.INVISIBLE);
-                loading.setVisibility(View.INVISIBLE);
+                // loading.setVisibility(View.INVISIBLE);
 
                 // Get text from views and eliminate whitespace
                 password = passwordField.getText().toString().trim();
@@ -128,7 +139,7 @@ public class LogInActivity extends FragmentActivity {
 
                         // Check if user exists
                         if (user != null) {
-                            loading.setVisibility(View.INVISIBLE);
+                            //   loading.setVisibility(View.INVISIBLE);
 //                            Intent toMainActivity = new Intent(LogInActivity.this, MainActivity.class);
 //                            startActivity(toMainActivity);
 //                            finish();
