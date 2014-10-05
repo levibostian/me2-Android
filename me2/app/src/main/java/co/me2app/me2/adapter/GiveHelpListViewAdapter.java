@@ -10,20 +10,20 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import co.me2app.me2.R;
-import co.me2app.me2.vo.NeedHelpVo;
+import co.me2app.me2.vo.SituationVo;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class GiveHelpListViewAdapter extends ArrayAdapter<NeedHelpVo> {
+public class GiveHelpListViewAdapter extends ArrayAdapter<SituationVo> {
 
-    private ArrayList<NeedHelpVo> mHelpData;
+    private ArrayList<SituationVo> mHelpData;
     private Context mContext;
 
-    public GiveHelpListViewAdapter(Context context, int resource, List<NeedHelpVo> objects) {
+    public GiveHelpListViewAdapter(Context context, int resource, List<SituationVo> objects) {
         super(context, resource, objects);
 
-        mHelpData = (ArrayList<NeedHelpVo>) objects;
+        mHelpData = (ArrayList<SituationVo>) objects;
         mContext = context;
     }
 
@@ -63,12 +63,12 @@ public class GiveHelpListViewAdapter extends ArrayAdapter<NeedHelpVo> {
 
         ViewHolder viewHolder = (ViewHolder) rowView.getTag();
 
-        NeedHelpVo helpData = mHelpData.get(position);
+        SituationVo helpData = mHelpData.get(position);
 
         viewHolder.statusColor.setBackgroundColor(mContext.getResources().getColor(helpData.statusColor));
         viewHolder.username.setText(helpData.username);
         viewHolder.date.setText(helpData.date);
-        viewHolder.struggle.setText(helpData.struggle);
+        viewHolder.struggle.setText(helpData.situation);
         viewHolder.locationMarker.setImageDrawable(mContext.getResources().getDrawable(R.drawable.ic_action_place));
         viewHolder.me2Button.setOnClickListener(new View.OnClickListener() {
             @Override

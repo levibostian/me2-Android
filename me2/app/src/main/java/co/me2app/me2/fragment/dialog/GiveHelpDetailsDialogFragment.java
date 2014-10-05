@@ -12,15 +12,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import co.me2app.me2.R;
-import co.me2app.me2.vo.NeedHelpVo;
+import co.me2app.me2.vo.SituationVo;
 
 public class GiveHelpDetailsDialogFragment extends DialogFragment {
 
     private static final String NEED_HELP_KEY = "giveHelpDetailsDialogFragment.needHelpKey";
 
-    private NeedHelpVo mNeedHelpData;
+    private SituationVo mNeedHelpData;
 
-    public static GiveHelpDetailsDialogFragment newInstance(NeedHelpVo needHelpData) {
+    public static GiveHelpDetailsDialogFragment newInstance(SituationVo needHelpData) {
         GiveHelpDetailsDialogFragment fragment = new GiveHelpDetailsDialogFragment();
 
         Bundle bundle = new Bundle();
@@ -67,7 +67,7 @@ public class GiveHelpDetailsDialogFragment extends DialogFragment {
         statusColor.setBackgroundColor(getActivity().getResources().getColor(mNeedHelpData.statusColor));
         username.setText(mNeedHelpData.username);
         date.setText(mNeedHelpData.date);
-        struggle.setText(mNeedHelpData.struggle);
+        struggle.setText(mNeedHelpData.situation);
         locationMarker.setImageDrawable(getActivity().getResources().getDrawable(R.drawable.ic_action_place));
         userGender.setImageDrawable(getActivity().getResources().getDrawable(mNeedHelpData.userGender));
         location.setText(mNeedHelpData.location);
