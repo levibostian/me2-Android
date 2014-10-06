@@ -1,5 +1,6 @@
 package co.me2app.me2.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
@@ -8,6 +9,9 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+
+import com.parse.ParseUser;
+
 import co.me2app.me2.R;
 import co.me2app.me2.adapter.viewpager.ViewPagerNavigationAdapter;
 
@@ -58,6 +62,10 @@ public class MainActivity extends ActionBarActivity {
     }
 
     private void logout() {
+        ParseUser.logOut();
+        Intent toLogIn = new Intent(MainActivity.this, LogInActivity.class);
+        startActivity(toLogIn);
+        finish();
     }
 
     @Override

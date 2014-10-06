@@ -8,4 +8,7 @@
     <string name="love_sent">Love sent. \n Thank you for helping!</string>
     <string name="how_do_you_relate">How do you relate?</string>
     <string name="how_can_you_help">How can you help?</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="log_in">Log In</string>
+    <string name="password">Password</string>
 </resources>
