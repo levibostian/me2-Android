@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="orange">#ffE8AB39</color>
-    <color name="yellow">#ffC9FF5E</color>
-    <color name="green">#ff14FF61</color>
-    <color name="pink">#ffE5A0E5</color>
-    <color name="blue">#ff62DEFF</color>
-    <color name="gray">#ff919997</color>
-    <color name="purple">#ff9D6CE8</color>
-    <color name="black">#ff292B2B</color>
-    <color name="red">#ffFF514B</color>
+    <color name="awesome">#ffE8AB39</color>
+    <color name="good">#ffC9FF5E</color>
+    <color name="average">#ff14FF61</color>
+    <color name="loving">#ffE5A0E5</color>
+    <color name="sad">#ff62DEFF</color>
+    <color name="lonely">#ff919997</color>
+    <color name="fear">#ff9D6CE8</color>
+    <color name="hurt">#ff292B2B</color>
+    <color name="angry">#ffFF514B</color>
 </resources>

@@ -6,7 +6,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import co.me2app.me2.R;
+import co.me2app.me2.enums.Mood;
 import co.me2app.me2.view.MoodColorChanger;
+
+import java.io.Serializable;
 
 public class MoodColorChooseDialogFragment extends DialogFragment implements MoodColorChanger.MoodColorSelectedListener {
 
@@ -14,17 +17,17 @@ public class MoodColorChooseDialogFragment extends DialogFragment implements Moo
 
     private MoodColorChooserListener mListener;
 
-    private int mCurrentMood;
+    private Serializable mCurrentMood;
 
     public interface MoodColorChooserListener {
-        public void moodColorSelected(int color);
+        public void moodColorSelected(Mood mood);
     }
 
-    public static MoodColorChooseDialogFragment newInstance(int currentMood) {
+    public static MoodColorChooseDialogFragment newInstance(Mood currentMood) {
         MoodColorChooseDialogFragment fragment = new MoodColorChooseDialogFragment();
 
         Bundle bundle = new Bundle();
-        bundle.putInt(MOOD_KEY, currentMood);
+        bundle.putSerializable(MOOD_KEY, currentMood);
         fragment.setArguments(bundle);
 
         return fragment;
@@ -34,7 +37,7 @@ public class MoodColorChooseDialogFragment extends DialogFragment implements Moo
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        mCurrentMood = getArguments().getInt(MOOD_KEY);
+        mCurrentMood = getArguments().getSerializable(MOOD_KEY);
     }
 
     @Override
@@ -53,6 +56,16 @@ public class MoodColorChooseDialogFragment extends DialogFragment implements Moo
         final MoodColorChanger purple = (MoodColorChanger) view.findViewById(R.id.purple);
         final MoodColorChanger black = (MoodColorChanger) view.findViewById(R.id.black);
         final MoodColorChanger red = (MoodColorChanger) view.findViewById(R.id.red);
+
+        orange.setMood(Mood.AWESOME);
+        yellow.setMood(Mood.GOOD);
+        green.setMood(Mood.AVERAGE);
+        pink.setMood(Mood.LOVING);
+        blue.setMood(Mood.SAD);
+        gray.setMood(Mood.LONELY);
+        purple.setMood(Mood.FEAR);
+        black.setMood(Mood.HURT);
+        red.setMood(Mood.ANGRY);
 
         orange.setMoodColorSelectedListener(this);
         yellow.setMoodColorSelectedListener(this);
@@ -79,10 +92,10 @@ public class MoodColorChooseDialogFragment extends DialogFragment implements Moo
     }
 
     @Override
-    public void onMoodColorSelected(int color) {
-        mCurrentMood = color;
+    public void onMoodColorSelected(Mood mood) {
+        mCurrentMood = mood;
 
-        mListener.moodColorSelected(color);
+        mListener.moodColorSelected(mood);
 
         getDialog().cancel();
     }

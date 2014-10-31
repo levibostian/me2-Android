@@ -9,18 +9,19 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import co.me2app.me2.R;
+import co.me2app.me2.enums.Mood;
 
 public class MoodColorChanger extends RelativeLayout {
 
     private ImageView mMoodColorImageView;
     private TextView mMoodDefinition;
 
-    private int mMoodColor;
+    private Mood mMood;
 
     private MoodColorSelectedListener mListener;
 
     public interface MoodColorSelectedListener {
-        public void onMoodColorSelected(int color);
+        public void onMoodColorSelected(Mood mood);
     }
 
     public MoodColorChanger(Context context) {
@@ -37,8 +38,69 @@ public class MoodColorChanger extends RelativeLayout {
         initialize(context, attrs, defStyle);
     }
 
+    public void setMood(Mood mood) {
+        mMood = mood;
+
+        populateView();
+    }
+
     public void setMoodColorSelectedListener(MoodColorSelectedListener listener) {
         mListener = listener;
+    }
+
+    private void populateView() {
+        if (mMood == null) {
+            throw new IllegalStateException("You did not set mood.");
+        }
+
+        mMoodColorImageView.setBackgroundColor(mMood.accept(new Mood.Visitor<Integer>() {
+            @Override
+            public Integer visitAwesome() {
+                return getResources().getColor(R.color.awesome);
+            }
+
+            @Override
+            public Integer visitGood() {
+                return getResources().getColor(R.color.good);
+            }
+
+            @Override
+            public Integer visitAverage() {
+                return getResources().getColor(R.color.average);
+            }
+
+            @Override
+            public Integer visitLoving() {
+                return getResources().getColor(R.color.loving);
+            }
+
+            @Override
+            public Integer visitSad() {
+                return getResources().getColor(R.color.sad);
+            }
+
+            @Override
+            public Integer visitLonely() {
+                return getResources().getColor(R.color.lonely);
+            }
+
+            @Override
+            public Integer visitFear() {
+                return getResources().getColor(R.color.fear);
+            }
+
+            @Override
+            public Integer visitHurt() {
+                return getResources().getColor(R.color.hurt);
+            }
+
+            @Override
+            public Integer visitAngry() {
+                return getResources().getColor(R.color.angry);
+            }
+        }));
+
+        // TODO add image changing here for emoji
     }
 
     private void initialize(Context context, AttributeSet attrs, int defStyle) {
@@ -49,9 +111,6 @@ public class MoodColorChanger extends RelativeLayout {
 
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.MoodColorChanger);
 
-        mMoodColor = typedArray.getColor(R.styleable.MoodColorChanger_mood_color, android.R.color.white);
-
-        mMoodColorImageView.setBackgroundColor(mMoodColor);
         mMoodDefinition.setText(typedArray.getString(R.styleable.MoodColorChanger_mood_definition));
 
         typedArray.recycle();
@@ -59,7 +118,7 @@ public class MoodColorChanger extends RelativeLayout {
         setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                mListener.onMoodColorSelected(mMoodColor);
+                mListener.onMoodColorSelected(mMood);
             }
         });
     }

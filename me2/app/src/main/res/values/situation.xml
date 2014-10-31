@@ -9,7 +9,10 @@
     </string-array>
 
     <string name="post_situation">Why are you feeling down?</string>
-    <string name="struggle_hint">Tell us about it.</string>
+    <string name="struggle_hint">Share something about it.</string>
     <string name="situation_posted">Everything is going to be ok. \nHope you feel better soon!</string>
-    <string name="choose_category_explain">What is it about?</string>
+    <string name="choose_category_explain">What\'s it about?</string>
+    <string name="whats_wrong">What\'s wrong?</string>
+
+    <integer name="post_situation_transition_duration">300</integer>
 </resources>
