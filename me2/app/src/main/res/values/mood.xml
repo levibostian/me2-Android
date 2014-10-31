@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="awesome">#ffE8AB39</color>
-    <color name="good">#ffC9FF5E</color>
-    <color name="average">#ff14FF61</color>
-    <color name="loving">#ffE5A0E5</color>
-    <color name="sad">#ff62DEFF</color>
+    <color name="awesome">#ffff9800</color>
+    <color name="good">#ffffeb3b</color>
+    <color name="average">#ff14e715</color>
+    <color name="loving">#ffff4081</color>
+    <color name="sad">#ff5677fc</color>
     <color name="lonely">#ff919997</color>
-    <color name="scared">#ff9D6CE8</color>
+    <color name="scared">#ff9c27b0</color>
     <color name="hurt">#ff292B2B</color>
-    <color name="angry">#ffFF514B</color>
+    <color name="angry">#ffe51c23</color>
 </resources>
