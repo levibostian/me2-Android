@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 import co.me2app.me2.R;
+import co.me2app.me2.view.MoodColorChanger;
 import co.me2app.me2.vo.SupportVo;
 
 import java.util.ArrayList;
@@ -26,7 +27,7 @@ public class GetHelpListViewAdapter extends ArrayAdapter<SupportVo> {
     }
 
     static class ViewHolder {
-        public ImageView statusColor;
+        public MoodColorChanger statusColor;
         public TextView username;
         public TextView support;
         public TextView date;
@@ -44,7 +45,7 @@ public class GetHelpListViewAdapter extends ArrayAdapter<SupportVo> {
             rowView = inflater.inflate(R.layout.get_help_row_layout, parent, false);
 
             ViewHolder viewHolder = new ViewHolder();
-            viewHolder.statusColor = (ImageView) rowView.findViewById(R.id.status_color);
+            viewHolder.statusColor = (MoodColorChanger) rowView.findViewById(R.id.status_color);
             viewHolder.username = (TextView) rowView.findViewById(R.id.username);
             viewHolder.support = (TextView) rowView.findViewById(R.id.support);
             viewHolder.date = (TextView) rowView.findViewById(R.id.date);
@@ -59,7 +60,7 @@ public class GetHelpListViewAdapter extends ArrayAdapter<SupportVo> {
 
         SupportVo helpData = mHelpData.get(position);
 
-        viewHolder.statusColor.setBackgroundColor(mContext.getResources().getColor(helpData.statusColor));
+        viewHolder.statusColor.setMood(helpData.mood);
         viewHolder.username.setText(helpData.username);
         viewHolder.date.setText(helpData.date);
         viewHolder.support.setText(helpData.support);

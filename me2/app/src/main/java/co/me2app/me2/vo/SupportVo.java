@@ -2,10 +2,11 @@ package co.me2app.me2.vo;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import co.me2app.me2.enums.Mood;
 
 public class SupportVo implements Parcelable {
 
-    public int statusColor;
+    public Mood mood;
     public String username;
     public String date;
     public String support;
@@ -19,7 +20,7 @@ public class SupportVo implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeInt(this.statusColor);
+        dest.writeSerializable(this.mood);
         dest.writeString(this.username);
         dest.writeString(this.date);
         dest.writeString(this.support);
@@ -31,7 +32,7 @@ public class SupportVo implements Parcelable {
     }
 
     private SupportVo(Parcel in) {
-        this.statusColor = in.readInt();
+        this.mood = (Mood) in.readSerializable();
         this.username = in.readString();
         this.date = in.readString();
         this.support = in.readString();

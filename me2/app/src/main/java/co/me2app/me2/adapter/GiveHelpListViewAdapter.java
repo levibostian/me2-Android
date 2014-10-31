@@ -5,10 +5,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import co.me2app.me2.R;
+import co.me2app.me2.view.MoodColorChanger;
 import co.me2app.me2.vo.SituationVo;
 
 import java.util.ArrayList;
@@ -38,7 +38,7 @@ public class GiveHelpListViewAdapter extends ArrayAdapter<SituationVo> {
     }
 
     static class ViewHolder {
-        public ImageView statusColor;
+        public MoodColorChanger statusColor;
         public TextView username;
         public TextView struggle;
         public TextView date;
@@ -58,7 +58,7 @@ public class GiveHelpListViewAdapter extends ArrayAdapter<SituationVo> {
             rowView = inflater.inflate(R.layout.give_help_row_layout, parent, false);
 
             ViewHolder viewHolder = new ViewHolder();
-            viewHolder.statusColor = (ImageView) rowView.findViewById(R.id.status_color);
+            viewHolder.statusColor = (MoodColorChanger) rowView.findViewById(R.id.status_color);
             viewHolder.username = (TextView) rowView.findViewById(R.id.username);
             viewHolder.struggle = (TextView) rowView.findViewById(R.id.struggle);
             viewHolder.date = (TextView) rowView.findViewById(R.id.date);
@@ -75,7 +75,7 @@ public class GiveHelpListViewAdapter extends ArrayAdapter<SituationVo> {
 
         SituationVo helpData = mHelpData.get(position);
 
-        viewHolder.statusColor.setBackgroundColor(mContext.getResources().getColor(helpData.statusColor));
+        viewHolder.statusColor.setMood(helpData.mood);
         viewHolder.username.setText(helpData.username);
         viewHolder.date.setText(helpData.date);
         viewHolder.struggle.setText(helpData.situation);

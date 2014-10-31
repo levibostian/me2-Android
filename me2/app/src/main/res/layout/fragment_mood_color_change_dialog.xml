@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:custom="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
@@ -15,22 +14,19 @@
             android:id="@+id/orange"
             android:layout_width="100dip"
             android:layout_height="100dip"
-            android:padding="4dip"
-            custom:mood_definition="Awesome"/>
+            android:padding="4dip"/>
 
         <co.me2app.me2.view.MoodColorChanger
             android:id="@+id/yellow"
             android:layout_width="100dip"
             android:layout_height="100dip"
-            android:padding="4dip"
-            custom:mood_definition="Good"/>
+            android:padding="4dip"/>
 
         <co.me2app.me2.view.MoodColorChanger
             android:id="@+id/green"
             android:layout_width="100dip"
             android:layout_height="100dip"
-            android:padding="4dip"
-            custom:mood_definition="Average"/>
+            android:padding="4dip"/>
 
     </LinearLayout>
 
@@ -43,22 +39,19 @@
             android:id="@+id/pink"
             android:layout_width="100dip"
             android:layout_height="100dip"
-            android:padding="4dip"
-            custom:mood_definition="Loving"/>
+            android:padding="4dip"/>
 
         <co.me2app.me2.view.MoodColorChanger
             android:id="@+id/blue"
             android:layout_width="100dip"
             android:layout_height="100dip"
-            android:padding="4dip"
-            custom:mood_definition="Sad"/>
+            android:padding="4dip"/>
 
         <co.me2app.me2.view.MoodColorChanger
             android:id="@+id/gray"
             android:layout_width="100dip"
             android:layout_height="100dip"
-            android:padding="4dip"
-            custom:mood_definition="Lonely"/>
+            android:padding="4dip"/>
 
     </LinearLayout>
 
@@ -71,22 +64,19 @@
             android:id="@+id/purple"
             android:layout_width="100dip"
             android:layout_height="100dip"
-            android:padding="4dip"
-            custom:mood_definition="Fear"/>
+            android:padding="4dip"/>
 
         <co.me2app.me2.view.MoodColorChanger
             android:id="@+id/black"
             android:layout_width="100dip"
             android:layout_height="100dip"
-            android:padding="4dip"
-            custom:mood_definition="Hurt"/>
+            android:padding="4dip"/>
 
         <co.me2app.me2.view.MoodColorChanger
             android:id="@+id/red"
             android:layout_width="100dip"
             android:layout_height="100dip"
-            android:padding="4dip"
-            custom:mood_definition="Angry"/>
+            android:padding="4dip"/>
 
     </LinearLayout>
 

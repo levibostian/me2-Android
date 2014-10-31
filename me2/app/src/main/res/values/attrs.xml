@@ -1,7 +1,3 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="MoodColorChanger">
-        <attr name="mood" format="string"/>
-        <attr name="mood_definition" format="string|reference"/>
-    </declare-styleable>
 </resources>

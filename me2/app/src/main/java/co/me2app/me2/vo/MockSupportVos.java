@@ -1,6 +1,7 @@
 package co.me2app.me2.vo;
 
 import co.me2app.me2.R;
+import co.me2app.me2.enums.Mood;
 
 public class MockSupportVos {
 
@@ -11,7 +12,7 @@ public class MockSupportVos {
     public static SupportVo support5 = new SupportVo();
 
     public static SupportVo getSupport1() {
-        support1.statusColor = R.color.sad;
+        support1.mood = Mood.SAD;
         support1.username = "amazing rock";
         support1.date = "1 minute ago";
         support1.support = "You don't have to go alone";
@@ -22,7 +23,7 @@ public class MockSupportVos {
     }
 
     public static SupportVo getSupport2() {
-        support2.statusColor = R.color.loving;
+        support2.mood = Mood.LOVING;
         support2.username = "fast rainbow";
         support2.date = "2 hours ago";
         support2.support = "Don't give up!";
@@ -33,7 +34,7 @@ public class MockSupportVos {
     }
 
     public static SupportVo getSupport3() {
-        support3.statusColor = R.color.awesome;
+        support3.mood = Mood.AWESOME;
         support3.username = "speedy basketball";
         support3.date = "1 day ago";
         support3.support = "There is hope.";
@@ -44,7 +45,7 @@ public class MockSupportVos {
     }
 
     public static SupportVo getSupport4() {
-        support4.statusColor = R.color.average;
+        support4.mood = Mood.AVERAGE;
         support4.username = "small knight";
         support4.date = "3 days ago";
         support4.support = "I can relate.";
@@ -55,7 +56,7 @@ public class MockSupportVos {
     }
 
     public static SupportVo getSupport5() {
-        support5.statusColor = R.color.good;
+        support5.mood = Mood.GOOD;
         support5.username = "giant bear";
         support5.date = "3 days ago";
         support5.support = "That happened to me2.";

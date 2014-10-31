@@ -37,10 +37,10 @@ public enum Mood {
             return visitor.visitLonely();
         }
     },
-    FEAR {
+    SCARED {
         @Override
         public <E> E accept(Visitor<E> visitor) {
-            return visitor.visitFear();
+            return visitor.visitScared();
         }
     },
     HURT {
@@ -65,7 +65,7 @@ public enum Mood {
         E visitLoving();
         E visitSad();
         E visitLonely();
-        E visitFear();
+        E visitScared();
         E visitHurt();
         E visitAngry();
     }

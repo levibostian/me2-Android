@@ -6,10 +6,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import co.me2app.me2.R;
+import co.me2app.me2.view.MoodColorChanger;
 import co.me2app.me2.vo.SituationVo;
 
 public class GiveHelpDetailsDialogFragment extends DialogFragment {
@@ -55,7 +55,7 @@ public class GiveHelpDetailsDialogFragment extends DialogFragment {
         View view = inflater.inflate(R.layout.fragment_get_help_details_dialog, container);
 
         final ImageView close = (ImageView) view.findViewById(R.id.close);
-        ImageView statusColor = (ImageView) view.findViewById(R.id.status_color);
+        MoodColorChanger statusColor = (MoodColorChanger) view.findViewById(R.id.status_color);
         TextView username = (TextView) view.findViewById(R.id.username);
         TextView struggle = (TextView) view.findViewById(R.id.struggle);
         TextView date = (TextView) view.findViewById(R.id.date);
@@ -71,7 +71,7 @@ public class GiveHelpDetailsDialogFragment extends DialogFragment {
                 getDialog().cancel();
             }
         });
-        statusColor.setBackgroundColor(getActivity().getResources().getColor(mNeedHelpData.statusColor));
+        statusColor.setMood(mNeedHelpData.mood);
         username.setText(mNeedHelpData.username);
         date.setText(mNeedHelpData.date);
         struggle.setText(mNeedHelpData.situation);

@@ -35,11 +35,10 @@
             android:orientation="horizontal"
             android:weightSum="1">
 
-            <ImageView
+            <co.me2app.me2.view.MoodColorChanger
                 android:id="@+id/status_color"
                 android:layout_width="32dip"
-                android:layout_height="32dip"
-                tools:background="@android:color/holo_blue_bright"/>
+                android:layout_height="32dip"/>
 
             <TextView
                 android:id="@+id/username"

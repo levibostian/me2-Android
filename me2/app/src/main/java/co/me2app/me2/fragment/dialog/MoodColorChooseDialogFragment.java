@@ -63,7 +63,7 @@ public class MoodColorChooseDialogFragment extends DialogFragment implements Moo
         pink.setMood(Mood.LOVING);
         blue.setMood(Mood.SAD);
         gray.setMood(Mood.LONELY);
-        purple.setMood(Mood.FEAR);
+        purple.setMood(Mood.SCARED);
         black.setMood(Mood.HURT);
         red.setMood(Mood.ANGRY);
 
