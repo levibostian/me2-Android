@@ -34,7 +34,7 @@
             android:id="@+id/update_situation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/button_today"
+            android:src="@drawable/is_something_wrong"
             android:paddingLeft="8dip"
             android:layout_gravity="center"/>
 

@@ -78,7 +78,7 @@
             android:layout_width="52dp"
             android:layout_height="32dp"
             android:focusable="false"
-            android:background="@drawable/button_post"/>
+            android:background="@drawable/post"/>
 
     </LinearLayout>
 
