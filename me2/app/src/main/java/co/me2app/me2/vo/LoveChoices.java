@@ -17,6 +17,8 @@ public class LoveChoices {
     public static ArrayList<String> loveChoices = new ArrayList<String>();
 
     public static ArrayList<String> getLoveChoices() {
+        loveChoices = new ArrayList<String>();
+
         loveChoices.add(youDontHaveToGoAlone);
         loveChoices.add(dontGiveUp);
         loveChoices.add(thereIsHope);

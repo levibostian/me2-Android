@@ -15,6 +15,8 @@ public class Me2Choices {
     public static ArrayList<String> me2Choices = new ArrayList<String>();
 
     public static ArrayList<String> getMe2Choices() {
+        me2Choices = new ArrayList<String>();
+
         me2Choices.add(youAreNotAlone);
         me2Choices.add(iCanRelate);
         me2Choices.add(iveBeenThere);
