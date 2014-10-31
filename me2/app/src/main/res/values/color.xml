@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="theme_primary_color">#5DE1E9</color>
+    <color name="theme_primary_color">#ff18ffff</color>
     <color name="divider">#ffc2c3be</color>
     <color name="off_black">#ff8b8b8b</color>
 </resources>
