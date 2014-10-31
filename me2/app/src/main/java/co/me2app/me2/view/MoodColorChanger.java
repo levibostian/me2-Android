@@ -44,6 +44,13 @@ public class MoodColorChanger extends RelativeLayout {
 
     public void setMoodColorSelectedListener(MoodColorSelectedListener listener) {
         mListener = listener;
+
+        setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mListener.onMoodColorSelected(mMood);
+            }
+        });
     }
 
     private void populateView() {
@@ -150,13 +157,6 @@ public class MoodColorChanger extends RelativeLayout {
         LayoutInflater.from(context).inflate(R.layout.view_mood_color_changer, this, true);
 
         mMoodColorImageView = (ImageView) findViewById(R.id.mood_color);
-
-        setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mListener.onMoodColorSelected(mMood);
-            }
-        });
     }
 
 }
