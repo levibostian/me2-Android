@@ -5,7 +5,6 @@ import android.support.v4.app.DialogFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import co.me2app.me2.R;
@@ -30,11 +29,15 @@ public class PostSituationDialogFragment extends DialogFragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        super.onCreateView(inflater, container, savedInstanceState);
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
-        getDialog().setTitle(getString(R.string.post_situation));
-        View view = inflater.inflate(R.layout.fragment_post_situation_dialog, container);
+        setStyle(STYLE_NORMAL, R.style.AppTheme_PostSituationDialog);
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_post_situation_dialog, container, false);
 
         mSituation = (EditText) view.findViewById(R.id.situation);
         mChooseCategory = (ChooseCategory) view.findViewById(R.id.choose_category);
@@ -53,10 +56,10 @@ public class PostSituationDialogFragment extends DialogFragment {
     }
 
     @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
+    public void onStart() {
+        super.onStart();
 
-        getDialog().getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        getDialog().getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
     }
 
     public void setPostSituationListener(PostSituationListener listener) {

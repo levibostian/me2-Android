@@ -1,55 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent"
+    android:padding="8dip">
 
-    <LinearLayout
-        android:orientation="vertical"
+    <EditText
+        android:id="@+id/situation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="8dip">
+        android:paddingBottom="10dip"
+        android:paddingLeft="10dip"
+        android:paddingRight="10dip"
+        android:hint="@string/struggle_hint"
+        android:textSize="16sp"/>
 
-        <EditText
-            android:id="@+id/situation"
-            android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingBottom="10dip"
-            android:paddingLeft="10dip"
-            android:paddingRight="10dip"
-            android:hint="@string/struggle_hint"
-            android:textSize="16sp"/>
+            android:text="@string/choose_category_explain"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <co.me2app.me2.view.ChooseCategory
+            android:id="@+id/choose_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:id="@+id/post_button"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="1">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/choose_category_explain"/>
-
-            <co.me2app.me2.view.ChooseCategory
-                android:id="@+id/choose_category"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-            <View
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_weight="1"/>
-
-            <ImageView
-                android:id="@+id/post_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dip"
-                android:background="@drawable/button_post"/>
-
-        </LinearLayout>
+            android:layout_marginTop="8dip"
+            android:background="@drawable/button_post"/>
 
     </LinearLayout>
 
-</ScrollView>
+</LinearLayout>
