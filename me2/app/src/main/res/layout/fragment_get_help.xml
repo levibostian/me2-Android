@@ -15,6 +15,7 @@
         android:layout_weight="1"
         android:focusable="true"
         android:clickable="false"
+        android:listSelector="@android:color/transparent"
         tools:listitem="@layout/need_help_row_layout"/>
 
     <View
