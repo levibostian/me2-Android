@@ -7,7 +7,9 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 import co.me2app.me2.R;
 import co.me2app.me2.adapter.HotlineFragmentAdapter;
 import co.me2app.me2.vo.HotlineVo;
@@ -32,6 +34,25 @@ public class HotlineFragment extends Fragment {
         mHotlineData = MockHotlineVos.getHotlines();
 
         ListView hotlineList = (ListView) rootView.findViewById(R.id.hotline_list);
+        hotlineList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                String website = mHotlineData.get(position).website;
+                long phoneNumber = mHotlineData.get(position).phone;
+
+                if (website != null && !website.equals("")) {
+                    Intent intent = new Intent(Intent.ACTION_VIEW);
+                    intent.setData(Uri.parse(mHotlineData.get(position).website));
+                    startActivity(intent);
+                } else if (phoneNumber > 0) {
+                    Intent intent = new Intent(Intent.ACTION_DIAL);
+                    intent.setData(Uri.parse("tel:"+phoneNumber));
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(getActivity(), R.string.hotline_not_available, Toast.LENGTH_LONG).show();
+                }
+            }
+        });
         HotlineFragmentAdapter adapter = new HotlineFragmentAdapter(getActivity(), R.layout.hotline_fragment_row, mHotlineData);
         hotlineList.setAdapter(adapter);
         adapter.setHotlineFragmentListener(new HotlineFragmentAdapter.HotlineFragmentListener() {
@@ -49,15 +70,6 @@ public class HotlineFragment extends Fragment {
                 startActivity(intent);
             }
         });
-
-//        hotlineList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> adapterView, View view, int pos, long id) {
-//                Intent intent = new Intent(Intent.ACTION_DIAL);
-//                intent.setData(Uri.parse("tel:"+mHotlineData.get(pos).phone));
-//                startActivity(intent);
-//            }
-//        });
 
         return rootView;
     }
