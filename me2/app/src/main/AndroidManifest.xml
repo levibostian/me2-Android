@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="co.me2app.me2" >
+    package="com.brightspotinnovations.me2" >
 
     <application
         android:allowBackup="true"
@@ -8,7 +8,7 @@
         android:label="@string/app_name"
         android:theme="@style/Theme.Me2style">
         <activity
-            android:name=".activity.MainActivity"
+            android:name="com.brightspotinnovations.me2.activity.MainActivity"
             android:label="@string/app_name"
             android:logo="@drawable/launch_03"
             android:screenOrientation="portrait">

@@ -10,19 +10,19 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <co.me2app.me2.view.MoodColorChanger
+        <com.brightspotinnovations.me2.view.MoodColorChanger
             android:id="@+id/orange"
             android:layout_width="100dip"
             android:layout_height="100dip"
             android:padding="4dip"/>
 
-        <co.me2app.me2.view.MoodColorChanger
+        <com.brightspotinnovations.me2.view.MoodColorChanger
             android:id="@+id/yellow"
             android:layout_width="100dip"
             android:layout_height="100dip"
             android:padding="4dip"/>
 
-        <co.me2app.me2.view.MoodColorChanger
+        <com.brightspotinnovations.me2.view.MoodColorChanger
             android:id="@+id/green"
             android:layout_width="100dip"
             android:layout_height="100dip"
@@ -35,19 +35,19 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <co.me2app.me2.view.MoodColorChanger
+        <com.brightspotinnovations.me2.view.MoodColorChanger
             android:id="@+id/pink"
             android:layout_width="100dip"
             android:layout_height="100dip"
             android:padding="4dip"/>
 
-        <co.me2app.me2.view.MoodColorChanger
+        <com.brightspotinnovations.me2.view.MoodColorChanger
             android:id="@+id/blue"
             android:layout_width="100dip"
             android:layout_height="100dip"
             android:padding="4dip"/>
 
-        <co.me2app.me2.view.MoodColorChanger
+        <com.brightspotinnovations.me2.view.MoodColorChanger
             android:id="@+id/gray"
             android:layout_width="100dip"
             android:layout_height="100dip"
@@ -60,19 +60,19 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <co.me2app.me2.view.MoodColorChanger
+        <com.brightspotinnovations.me2.view.MoodColorChanger
             android:id="@+id/purple"
             android:layout_width="100dip"
             android:layout_height="100dip"
             android:padding="4dip"/>
 
-        <co.me2app.me2.view.MoodColorChanger
+        <com.brightspotinnovations.me2.view.MoodColorChanger
             android:id="@+id/black"
             android:layout_width="100dip"
             android:layout_height="100dip"
             android:padding="4dip"/>
 
-        <co.me2app.me2.view.MoodColorChanger
+        <com.brightspotinnovations.me2.view.MoodColorChanger
             android:id="@+id/red"
             android:layout_width="100dip"
             android:layout_height="100dip"

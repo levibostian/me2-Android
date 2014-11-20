@@ -35,7 +35,7 @@
             android:orientation="horizontal"
             android:weightSum="1">
 
-            <co.me2app.me2.view.MoodColorChanger
+            <com.brightspotinnovations.me2.view.MoodColorChanger
                 android:id="@+id/status_color"
                 android:layout_width="32dip"
                 android:layout_height="32dip"/>
